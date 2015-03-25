@@ -1,0 +1,245 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Rubicon '. $this->translate('Rubicon ERP'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendName('apple-mobile-web-app-capable', 'yes')
+            ->appendName('apple-mobile-web-app-status-bar-style', 'black')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . 'css/bootstrap-theme.min.css')
+                        ->prependStylesheet($this->basePath() . 'css/bootstrap.min.css') 
+                        ->prependStylesheet($this->basePath() . 'css/font-awesome.min.css')
+                        ->prependStylesheet($this->basePath() . 'css/smartadmin-production-plugins.min.css')
+                        ->prependStylesheet($this->basePath() . 'css/smartadmin-production.min.css')
+                        ->prependStylesheet($this->basePath() . 'css/smartadmin-skins.min.css')
+                        ->prependStylesheet($this->basePath() . 'css/smart_erp.css')
+                        ->prependStylesheet($this->basePath() . 'css/demo.min.css')
+                        ->prependStylesheet($this->basePath() . 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700')
+                        ->prependStylesheet($this->basePath() . 'invoice.min.css')
+                       ?>
+
+
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath() . 'js/app.config.js')
+            ->prependFile($this->basePath() . 'js/plugin/jquery-touch/jquery.ui.touch-punch.min.js')
+            ->prependFile($this->basePath() . 'js/bootstrap/bootstrap.min.js')
+            ->prependFile($this->basePath() . 'js/notification/SmartNotification.min.js')
+            ->prependFile($this->basePath() . 'js/smartwidgets/jarvis.widget.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/sparkline/jquery.sparkline.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/jquery-validate/jquery.validate.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/masked-input/jquery.maskedinput.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/select2/select2.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/bootstrap-slider/bootstrap-slider.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/msie-fix/jquery.mb.browser.min.js')
+            ->prependFile($this->basePath() . 'js/plugin/fastclick/fastclick.min.js')
+            ->prependFile($this->basePath() . 'js/app.min.js')
+            ->prependFile($this->basePath() . 'js/demo.min.js')
+            ->prependFile($this->basePath() . 'js/speech/voicecommand.min.js')
+            ->prependFile($this->basePath() . 'js/smart-chat-ui/smart.chat.ui.min.js')
+            ->prependFile($this->basePath() . 'js/smart-chat-ui/smart.chat.manager.min.js')
+
+      
+        ; ?>
+<script type="text/javascript">
+      // DO NOT REMOVE : GLOBAL FUNCTIONS!
+      $(document).ready(function() {
+        pageSetUp();
+      })
+    </script>
+	</head>
+	
+	<body class="">
+
+		<header id="header">
+
+			<div id="logo-group">
+				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+			</div>
+
+			<span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Want to apply?</span> <a href="register.html" class="btn btn-danger">Create account</a> </span>
+
+		</header>
+
+		<div id="main" role="main">
+
+			<!-- MAIN CONTENT -->
+			<div id="content" class="container">
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+						
+						
+
+							
+							
+							<img src="img/login.jpg" class="" alt="" style="width:610px">
+
+						
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
+								<p>
+									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+								</p>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<h5 class="about-heading">Not just your average template!</h5>
+								<p>
+									Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
+								</p>
+							</div>
+						</div>
+
+					</div>
+					
+								<?php echo $this->content; ?>
+								
+						
+												
+					</div>
+				</div>
+			</div>
+</div>
+<!-- FOOTER STARTS HERE -->
+<div class="page-footer">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Mibs Technologies</span> © 2014-2015</span>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 text-right hidden-xs">
+          <div class="txt-color-white inline-block">
+            <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
+            <div class="btn-group dropup">
+              <button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+                <i class="fa fa-link"></i> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu pull-right text-left">
+                <li>
+                  <div class="padding-5">
+                    <p class="txt-color-darken font-sm no-margin">Download Progress</p>
+                    <div class="progress progress-micro no-margin">
+                      <div class="progress-bar progress-bar-success" style="width: 50%;"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <div class="padding-5">
+                    <p class="txt-color-darken font-sm no-margin">Server Load</p>
+                    <div class="progress progress-micro no-margin">
+                      <div class="progress-bar progress-bar-success" style="width: 20%;"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <div class="padding-5">
+                    <p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
+                    <div class="progress progress-micro no-margin">
+                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <div class="padding-5">
+                    <button class="btn btn-block btn-default">refresh</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+
+		<!--================================================== -->	
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script src="js/plugin/pace/pace.min.js"></script>
+
+	    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
+
+	    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->		
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		
+		<!--[if IE 8]>
+			
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+			
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<script type="text/javascript">
+			runAllForms();
+
+			$(function() {
+				// Validation
+				$("#login-form").validate({
+					// Rules for form validation
+					rules : {
+						email : {
+							required : true,
+							email : true
+						},
+						password : {
+							required : true,
+							minlength : 3,
+							maxlength : 20
+						}
+					},
+
+					// Messages for form validation
+					messages : {
+						email : {
+							required : 'Please enter your email address',
+							email : 'Please enter a VALID email address'
+						},
+						password : {
+							required : 'Please enter your password'
+						}
+					},
+
+					// Do not change code below
+					errorPlacement : function(error, element) {
+						error.insertAfter(element.parent());
+					}
+				});
+			});
+		</script>
+
+	</body>
+</html>

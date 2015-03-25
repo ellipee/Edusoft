@@ -1,0 +1,119 @@
+
+ <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
+                        
+                        
+
+                            
+                            
+                            <img src="<?php echo $this->basePath('img/login.jpg') ?>" class="" alt="" style="width:610px">
+ </div>
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+						<div class="well no-padding">
+
+							<?php
+		$form = $this->form;
+$form->setAttribute('action', $this->url('registration'));
+$form->setAttribute('class', 'smart-form client-form');
+$form->setAttribute('id', 'smart-form-register');
+$form->prepare();
+
+				echo $this->form()->openTag($form); ?>
+								<header>
+									<h2>Registration Form</h2>
+								</header>
+
+								<fieldset>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-meh-o"></i>
+											<?php echo $this->formInput($form->get('firstName'));?></br>
+                                            <?php echo $this->formElementErrors($form->get('firstName'), array('class' => 'help-inline'));?>
+											<b class="tooltip tooltip-bottom-right">Please enter your first name</b> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-meh-o"></i>
+											<?php echo $this->formInput($form->get('lastName'));?></br>
+                                            <?php echo $this->formElementErrors($form->get('lastName'), array('class' => 'help-inline'));?>
+											<b class="tooltip tooltip-bottom-right">Please enter your last name</b> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-user"></i>
+											<?php echo $this->formInput($form->get('username'));?></br>
+                                            <?php echo $this->formElementErrors($form->get('username'));?>
+											<b class="tooltip tooltip-bottom-right">Needed to enter the website</b> </label>
+									</section>
+
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-envelope"></i>
+											<?php echo $this->formInput($form->get('email'));?></br>
+                                             <?php echo $this->formElementErrors($form->get('email'));?>
+											<b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
+									</section>
+
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<?php echo $this->formInput($form->get('password'));?></br>
+                                             <?php echo $this->formElementErrors($form->get('password'));?>
+											<b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+									</section>
+
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<?php echo $this->formInput($form->get('passwordConfirm'));?></br>
+                                             <?php echo $this->formElementErrors($form->get('passwordConfirm'));?>
+											<b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+									</section>
+								</fieldset>
+
+								<footer>
+									<?php echo $this->formInput($form->get('submit'));?>
+								</footer>
+
+								<div class="message">
+									<i class="fa fa-check"></i>
+									<p>
+										Thank you for your registration!
+									</p>
+								</div>
+							<?php echo $this->form()->closeTag(); ?>
+
+						</div>
+						
+					</div>
+				<!-- Modal -->
+		 <script type="text/javascript">
+            runAllForms();
+pageSetUp();
+            $(function() {
+                // Validation
+                $("#smart-form-register").validate({
+                    // Rules for form validation
+                    rules : {
+                       firstName : {
+                            required : true,
+                            email : true
+                        },
+                        lastName: {
+                            required : true,
+                            minlength : 3,
+                            maxlength : 20
+                        }
+                    },
+
+                    // Messages for form validation
+                    messages : {
+                        firstName : {
+                            required : 'Please enter your email address',
+                            email : 'Please enter a VALID email address'
+                        },
+                        lastName : {
+                            required : 'Please enter your password'
+                        }
+                    },
+
+                    // Do not change code below
+                    errorPlacement : function(error, element) {
+                        error.insertAfter(element.parent());
+                    }
+                });
+            });
+        </script>

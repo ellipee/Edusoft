@@ -1,0 +1,69 @@
+
+ <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
+                        
+                        
+
+                            
+                            
+                            <img src="<?php echo $this->basePath('img/login.jpg') ?>" class="" alt="" style="width:610px">
+ </div>
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+						<div class="well no-padding">
+
+							<?php
+		$form = $this->form;
+		$form->setAttribute('action', $this->url('login/default', array('controller' => 'registration', 'action' => 'registration')));
+		$form->prepare();
+
+				echo $this->form()->openTag($form); ?>
+								<header>
+									Registration is FREE*
+								</header>
+
+								<fieldset>
+									<section>
+										<label class="input"> <i class="icon-append fa fa-user"></i>
+											<?php echo $this->formInput($form->get('usrName'))."\n";?></br>
+                                            <?php echo $this->formElementErrors($form->get('usrName'))."\n";?>
+											<b class="tooltip tooltip-bottom-right">Needed to enter the website</b> </label>
+									</section>
+
+									<section>
+										<label class="input"> <i class="icon-append fa fa-envelope"></i>
+											<?php echo $this->formInput($form->get('usrEmail'))."\n";?></br>
+                                             <?php echo $this->formElementErrors($form->get('usrEmail'))."\n";?>
+											<b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
+									</section>
+
+									<section>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<?php echo $this->formInput($form->get('usrPassword'))."\n";?></br>
+                                             <?php echo $this->formElementErrors($form->get('usrPassword'))."\n";?>
+											<b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+									</section>
+
+									<section>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<?php echo $this->formInput($form->get('usrPasswordConfirm'))."\n";?></br>
+                                             <?php echo $this->formElementErrors($form->get('usrPasswordConfirm'))."\n";?>
+											<b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+									</section>
+								</fieldset>
+
+								<footer>
+									<?php echo $this->formInput($form->get('submit'))."\n";?>
+								</footer>
+
+								<div class="message">
+									<i class="fa fa-check"></i>
+									<p>
+										Thank you for your registration!
+									</p>
+								</div>
+							<?php echo $this->form()->closeTag(); ?>
+
+						</div>
+						
+					</div>
+				<!-- Modal -->
+		

@@ -1,0 +1,132 @@
+<?php echo $this->headScript()
+            
+            ->appendFile($this->basePath() . '/js/jquery-2.1.1.min.js')
+            ->appendFile($this->basePath() . '/js/jquery-ui-1.10.3.min.js')
+            ->appendFile($this->basePath() . '/js/app.config.js')
+            ->appendFile($this->basePath() . '/js/smartwidgets/jarvis.widget.min.js')
+            ->appendFile($this->basePath() . '/js/bootstrap.min.js')
+            ->appendFile($this->basePath() . '/js/plugin/pace/pace.min.js')
+            ->appendFile($this->basePath() . '/js/app.min.js')
+            ->appendFile($this->basePath() . '/js/demo.min.js')
+            ->prependFile($this->basePath() . '/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js')
+            ->appendFile($this->basePath() . '/js/smartwidgets/jarvis.widget.min.js')
+            ->appendFile($this->basePath() . '/js/plugin/select2/select2.min.js')
+            ->appendFile($this->basePath() . '/js/plugin/fullcalendar/jquery.fullcalendar.min.js')
+
+             //  $this->headScript()->prependFile('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js', 'text/javascript')
+              //      ->prependFile('http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js', 'text/javascript')
+                //    ->appendFile('/jqGrid/js/i18n/grid.locale-en.js', 'text/javascript')
+                //    ->appendFile('/jqGrid/plugins/ui.multiselect.js', 'text/javascript')
+                //    ->appendFile('/jqGrid/js/jquery.jqGrid.min.js', 'text/javascript') 
+        ; ?>
+
+
+<article class="col-md-8">
+
+<?php $formacademicsession = $this->formacademicsession;
+				$formacademicsession->setAttribute('action', $this->url('admin/default',array('action'=> 'addacademicsession','controller' => 'academicsession')));
+				$formacademicsession->prepare(); ?>
+				<?php echo $this->form()->openTag($formacademicsession); ?>
+
+
+<div class="row">
+						<section class="col col-6">
+							<label class="label">Session Name</label>
+							<label class="select">
+			<?php echo $this->formSelect($formacademicsession->get('session')); ?>
+							<i></i></label>
+						</section>
+
+						<section class="col col-6">
+							<label class="label">Term Name</label>
+							<label class="select">
+			<?php echo $this->formSelect($formacademicsession->get('term')); ?>
+							<i></i></label>
+						</section>
+					</div>
+					
+					<div class="row">
+						<section class="col col-6">
+							<label class="input"><i class="icon-append fa fa-calendar"></i>
+		 <?php echo $this->formInput($formacademicsession->get('startDate')); ?>
+							</label>
+						</section>
+									
+						<section class="col col-6">
+							<label class="input"> <i class="icon-append fa fa-calendar"></i>
+			<?php echo $this->formInput($formacademicsession->get('endDate')); ?>
+							</label>
+						</section>
+					</div>
+												  									  				
+			   </div>
+			   <span class="glyphicon glyphicon-floppy-disk "><?php echo $this->formRow($formacademicsession->get('submit')); ?></span>
+								<?php echo $this->form()->closeTag(); ?>
+			</div>
+</article>
+
+
+
+ <script>
+$(function() {
+$( "#datepicker" ).datepicker();
+			
+			$('#startdate').datepicker({
+				dateFormat : 'dd/mm/yy',
+				changeMonth: true,
+				changeYear: true,
+				prevText : '<i class="fa fa-chevron-left"></i>',
+				nextText : '<i class="fa fa-chevron-right"></i>',
+				onSelect : function(selectedDate) {
+					$('#enddate').datepicker('option', 'minDate', selectedDate);
+				}
+			});
+			
+			$('#enddate').datepicker({
+				dateFormat : 'dd/mm/yy',
+				changeMonth: true,
+				changeYear: true,
+				prevText : '<i class="fa fa-chevron-left"></i>',
+				nextText : '<i class="fa fa-chevron-right"></i>',
+				onSelect : function(selectedDate) {
+					$('#startdate').datepicker('option', 'maxDate', selectedDate);
+				}
+			});
+
+
+
+				// Validation
+				$("#academicsession").validate({
+
+					// Rules for form validation
+					rules : {
+						session: {
+							required : true
+						},
+						term : {
+							required : true
+							
+						},
+						
+					},
+
+					// Messages for form validation
+					messages : {
+						session : {
+							required : 'Please select a session'
+						},
+						term : {
+							required : 'Please select a term'
+						},
+					},
+
+					// Do not change code below
+					errorPlacement : function(error, element) {
+						error.insertAfter(element.parent());
+					},
+
+				});
+
+
+});
+</script>
